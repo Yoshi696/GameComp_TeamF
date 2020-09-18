@@ -24,5 +24,11 @@ public class PlayerMove : MonoBehaviour
         var velox = speed * Input.GetAxisRaw("Horizontal");
         GetComponent<Rigidbody>().velocity = new Vector3(velox, 0f, 0f);
         //transform.position = new Vector3(playerpos.x , playerpos.y, playerpos.z + 10.0f);
+        if (Input.GetKey("down"))
+        {
+            var nox = speed * Input.GetAxisRaw("Vertical");
+            GetComponent<Rigidbody>().velocity = new Vector3(0f, nox, 0f);
+            //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+        }
     }
 }
