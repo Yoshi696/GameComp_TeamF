@@ -18,14 +18,16 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Vector3 pos = this.gameObject.transform.position;
-        this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + zen);
-        float den = pos.y;
-
         //キーボード
         float velox = speed * Input.GetAxisRaw("Horizontal");
         float nox = speed * Input.GetAxisRaw("Vertical");
         float gen = Input.GetAxisRaw("Vertical");
+
+        Vector3 pos = this.gameObject.transform.position;
+        this.gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z + zen);
+       // float den = pos.y;
+
+
         //if (pos.y < den)
         //{
         //rb.AddForce(velox, nox, 0f);
